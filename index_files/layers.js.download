@@ -1,0 +1,122 @@
+var wms_layers = [];
+
+var lyr_output_hh_0 = new ol.layer.Image({
+                            opacity: 1,
+                            title: "output_hh",
+                            
+                            
+                            source: new ol.source.ImageStatic({
+                               url: "./layers/output_hh_0.png",
+    attributions: ' ',
+                                projection: 'EPSG:3857',
+                                alwaysInRange: true,
+                                imageExtent: [1320048.166046, 5682270.830808, 1325459.530182, 5688304.552465]
+                            })
+                        });
+
+        var lyr_OpenStreetMap_1 = new ol.layer.Tile({
+            'title': 'OpenStreetMap',
+            'opacity': 1.000000,
+            
+            
+            source: new ol.source.XYZ({
+            attributions: ' ',
+                url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png'
+            })
+        });
+var format_lengthtothemaxmin_2 = new ol.format.GeoJSON();
+var features_lengthtothemaxmin_2 = format_lengthtothemaxmin_2.readFeatures(json_lengthtothemaxmin_2, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_lengthtothemaxmin_2 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_lengthtothemaxmin_2.addFeatures(features_lengthtothemaxmin_2);
+var lyr_lengthtothemaxmin_2 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_lengthtothemaxmin_2, 
+                style: style_lengthtothemaxmin_2,
+                popuplayertitle: "length to the max-min",
+                interactive: true,
+                title: '<img src="styles/legend/lengthtothemaxmin_2.png" /> length to the max-min'
+            });
+var format_description_3 = new ol.format.GeoJSON();
+var features_description_3 = format_description_3.readFeatures(json_description_3, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_description_3 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_description_3.addFeatures(features_description_3);
+var lyr_description_3 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_description_3, 
+                style: style_description_3,
+                popuplayertitle: "description",
+                interactive: true,
+                title: '<img src="styles/legend/description_3.png" /> description'
+            });
+var format_startingandendingsheigth_4 = new ol.format.GeoJSON();
+var features_startingandendingsheigth_4 = format_startingandendingsheigth_4.readFeatures(json_startingandendingsheigth_4, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_startingandendingsheigth_4 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_startingandendingsheigth_4.addFeatures(features_startingandendingsheigth_4);
+var lyr_startingandendingsheigth_4 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_startingandendingsheigth_4, 
+                style: style_startingandendingsheigth_4,
+                popuplayertitle: "starting and ending's heigth",
+                interactive: true,
+                title: '<img src="styles/legend/startingandendingsheigth_4.png" /> starting and ending\'s heigth'
+            });
+var format_wholestreetslength_5 = new ol.format.GeoJSON();
+var features_wholestreetslength_5 = format_wholestreetslength_5.readFeatures(json_wholestreetslength_5, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_wholestreetslength_5 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_wholestreetslength_5.addFeatures(features_wholestreetslength_5);
+var lyr_wholestreetslength_5 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_wholestreetslength_5, 
+                style: style_wholestreetslength_5,
+                popuplayertitle: "whole street's length",
+                interactive: true,
+                title: '<img src="styles/legend/wholestreetslength_5.png" /> whole street\'s length'
+            });
+var format_maxandminsheigth_6 = new ol.format.GeoJSON();
+var features_maxandminsheigth_6 = format_maxandminsheigth_6.readFeatures(json_maxandminsheigth_6, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_maxandminsheigth_6 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_maxandminsheigth_6.addFeatures(features_maxandminsheigth_6);
+var lyr_maxandminsheigth_6 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_maxandminsheigth_6, 
+                style: style_maxandminsheigth_6,
+                popuplayertitle: "max and min's heigth",
+                interactive: true,
+                title: '<img src="styles/legend/maxandminsheigth_6.png" /> max and min\'s heigth'
+            });
+
+lyr_output_hh_0.setVisible(true);lyr_OpenStreetMap_1.setVisible(true);lyr_lengthtothemaxmin_2.setVisible(true);lyr_description_3.setVisible(true);lyr_startingandendingsheigth_4.setVisible(false);lyr_wholestreetslength_5.setVisible(true);lyr_maxandminsheigth_6.setVisible(false);
+var layersList = [lyr_output_hh_0,lyr_OpenStreetMap_1,lyr_lengthtothemaxmin_2,lyr_description_3,lyr_startingandendingsheigth_4,lyr_wholestreetslength_5,lyr_maxandminsheigth_6];
+lyr_lengthtothemaxmin_2.set('fieldAliases', {'id': 'id', '@id': '@id', 'highway': 'highway', 'lanes': 'lanes', 'lit': 'lit', 'maxspeed': 'maxspeed', 'name': 'name', 'oneway': 'oneway', 'smoothness': 'smoothness', 'surface': 'surface', 'left sidewalk (cycle)': 'left sidewalk (cycle)', 'right sidewalk': 'right sidewalk', 'parking on the left': 'parking on the left', 'parking on the right': 'parking on the right', 'length': 'length', });
+lyr_description_3.set('fieldAliases', {'id': 'id', 'descrizione ': 'descrizione ', });
+lyr_startingandendingsheigth_4.set('fieldAliases', {'fid': 'fid', 'id': 'id', 'heigth1': 'heigth1', 'diff': 'diff', });
+lyr_wholestreetslength_5.set('fieldAliases', {'fid': 'fid', 'id': 'id', 'length': 'length', });
+lyr_maxandminsheigth_6.set('fieldAliases', {'fid': 'fid', 'id': 'id', 'distance': 'distance', 'heigth': 'heigth', });
+lyr_lengthtothemaxmin_2.set('fieldImages', {'id': '', '@id': '', 'highway': '', 'lanes': '', 'lit': '', 'maxspeed': '', 'name': '', 'oneway': '', 'smoothness': '', 'surface': '', 'left sidewalk (cycle)': '', 'right sidewalk': '', 'parking on the left': '', 'parking on the right': '', 'length': '', });
+lyr_description_3.set('fieldImages', {'id': 'TextEdit', 'descrizione ': 'TextEdit', });
+lyr_startingandendingsheigth_4.set('fieldImages', {'fid': 'TextEdit', 'id': 'TextEdit', 'heigth1': 'TextEdit', 'diff': '', });
+lyr_wholestreetslength_5.set('fieldImages', {'fid': 'TextEdit', 'id': 'TextEdit', 'length': 'TextEdit', });
+lyr_maxandminsheigth_6.set('fieldImages', {'fid': 'TextEdit', 'id': 'TextEdit', 'distance': 'TextEdit', 'heigth': 'TextEdit', });
+lyr_lengthtothemaxmin_2.set('fieldLabels', {'id': 'no label', '@id': 'no label', 'highway': 'no label', 'lanes': 'no label', 'lit': 'no label', 'maxspeed': 'no label', 'name': 'no label', 'oneway': 'no label', 'smoothness': 'no label', 'surface': 'no label', 'left sidewalk (cycle)': 'no label', 'right sidewalk': 'no label', 'parking on the left': 'no label', 'parking on the right': 'no label', 'length': 'no label', });
+lyr_description_3.set('fieldLabels', {'id': 'inline label - always visible', 'descrizione ': 'inline label - always visible', });
+lyr_startingandendingsheigth_4.set('fieldLabels', {'fid': 'no label', 'id': 'no label', 'heigth1': 'no label', 'diff': 'inline label - always visible', });
+lyr_wholestreetslength_5.set('fieldLabels', {'fid': 'no label', 'id': 'no label', 'length': 'inline label - always visible', });
+lyr_maxandminsheigth_6.set('fieldLabels', {'fid': 'no label', 'id': 'no label', 'distance': 'no label', 'heigth': 'no label', });
+lyr_maxandminsheigth_6.on('precompose', function(evt) {
+    evt.context.globalCompositeOperation = 'normal';
+});
